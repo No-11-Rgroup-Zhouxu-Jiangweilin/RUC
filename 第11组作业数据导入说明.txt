@@ -1,1 +1,20 @@
-Fama-French������ģ�͵������ɹ�̩�����ݿ��������������������Ͻӿ���ʱû�У�ֱ�ӽ��ļ���������ҳ�Ϸ����ѯ����ʧЧ�������������ѡ�񱾵ص��룬����ʦ��CSV�ļ��������棬�Ա����С�
+Fama-French三因子模型的数据由国泰安数据库下载整理，该网的网上接口暂时没有，直接将文件保存在网页上方便查询但由失效问题产生，所以选择本地导入，请老师讲CSV文件放在桌面，以便运行。
+原始数据导入代码如下（网址不稳定，故在作业中呈现的是本地导入方法）
+setwd("C://Users//Administrator")
+base <-   "https://osspandownload.zju.edu.cn/download/f7ea73af5759411ca38b8647a15646ba/f5e461c03f452b3440f32a5e2b752b1c6cba402b587414fd1ad9a396bed533ef/"
+factor <- 
+  "Fama-French"
+format<-
+  ".csv"
+
+# Paste the pieces together to form the full url
+full_url <-
+  paste(base,
+        factor,
+        format,
+        sep ="")
+download.file(
+  full_url,
+  "Fama-French.csv",
+  quiet = TRUE)
+data <- read.csv("Fama-French.csv")
